@@ -4,12 +4,36 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview",
-    "start": "vite preview --host 0.0.0.0 --port 5173"
+  "dev": "vite",
+  "build": "vite build",
+  "lint": "eslint .",
+  "preview": "vite preview",
+  "start": "vite preview"
   },
+  "eslintConfig": {
+    "extends": [
+      "plugin:react-refresh/recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:@typescript-eslint/recommended-requiring-type-checking",
+      "plugin:react/jsx-runtime",
+      "prettier"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    },
+    "plugins": [
+      "@typescript-eslint",
+      "react-refresh",
+      "react-hooks"
+    ],
+    "rules": {
+      "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+      "@typescript-eslint/no-explicit-any": ["off"],
+      "@typescript-eslint/explicit-function-return-type": ["off"],
+      "@typescript-eslint/no-non-null-assertion": ["off"]
+    }
+},
   "dependencies": {
     "@supabase/supabase-js": "^2.39.7",
     "lucide-react": "^0.344.0",
